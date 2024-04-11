@@ -1,0 +1,79 @@
+$primary-color: #1a1a1a;
+$secondary-color: #646cff;
+$hover-color: #535bf2;
+$background-color: #242424;
+$light-background-color: #f9f9f9;
+$light-color: #213547;
+$focus-ring-color: -webkit-focus-ring-color;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: $background-color;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    font-weight: 500;
+    color: $secondary-color;
+    text-decoration: inherit;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+ 
+
+  @media (prefers-color-scheme: light) {
+    color: $light-color;
+    background-color: #ffffff;
+
+    a:hover {
+      color: #747bff;
+    }
+
+    button {
+      background-color: $light-background-color;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+}
+
+@mixin button-styles {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $primary-color;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto $focus-ring-color;
+  }
+}

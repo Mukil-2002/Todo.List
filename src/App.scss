@@ -1,0 +1,103 @@
+$primary-color: #3ec1d3;
+$secondary-color: #ff7e67;
+$text-color: #222;
+$font-size: 18px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1712646913801-34aed548531e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Cover the entire viewport */
+  overflow: hidden; /* Hide overflow to prevent scrolling */
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  position: relative; /* Position relative for overlay */
+  overflow: hidden; /* Hide overflow from the overlay */
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative; /* Position relative for button z-index */
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+
+  input {
+    width: 200px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: $font-size;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  button {
+    height: 40px;
+    padding: 0 20px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: $font-size;
+    transition: background-color 0.3s ease;
+    position: relative; /* Ensure button is above overlay */
+    z-index: 2; /* Place button above overlay */
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  button {
+    height: 40px;
+    padding: 0 20px;
+    background-color: $secondary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: $font-size;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .todo-item {
+    margin-bottom: 10px;
+  }
+}
